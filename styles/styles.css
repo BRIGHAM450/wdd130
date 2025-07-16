@@ -30,19 +30,22 @@ main{
     max-width: 840px;
 }
 aside{
+    position: relative;
     width: 20rem;
-    margin: 1rem;
-    border: 1px solid rgb(0 0 0/ 0.2);
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
     text-align: center;
+}
+aside h2 {
+  position: absolute;
+  top: 47px;
+  left: 150px;
 }
 aside img{
     width: 200px;
     height: auto;
 }
 main img{
+    float: right;
+    margin-left: 1rem;
     width: 150px;
     height: auto;
 }
@@ -61,20 +64,11 @@ footer{
     background-color: #ddd;
     color: #000;
 }
-aside{
-    width: 20em;
-    text-align: center;
-}
 
-main img{
-    float: right;
-}
-
-aside{
-    position: relative;
-}
-aside h2{
-    position: absolute;
-    top: 47px;
-    left: 150px;
+.box {
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0 / 10%);
+    padding: 1rem;
+    background-color: #ddd;
+    color: #000;
 }
