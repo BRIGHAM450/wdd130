@@ -1,4 +1,5 @@
 :root {
+  /* CSS variables for color scheme and fonts */
   --primary-color: #0F4C5C; 
   --secondary-color: #1B9AAA; 
   --accent1-color: #62C370;  
@@ -8,75 +9,90 @@
   --body-font: 'Open Sans', sans-serif;
 }
 
+/* Reset default margin, padding and set box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Header styling: flexbox for layout, background, and text color */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--primary-color);
   color: var(--accent2-color);
-
 }
 
+/* Logo image inside header */
 header .logo img {
   height: 100px;
 }
-nav ul{
+
+/* Navigation bar: horizontal list */
+nav ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-nav ul li{
-  margin-left: 20px;
-}
-nav ul li a {
-  text-decoration: none;
-  background: white;
-  padding:  8px 15px ;
-  border:  1px solid black;
+
+/* Space between menu items */
+nav ul li {
+  margin-left: 10px;
 }
 
+/* Navigation links: no underline, padding, white text */
+nav ul li a {
+  text-decoration: none;
+  padding: 8px 15px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  color: white;
+}
+
+/* General body text style */
 body {
   font-family: var(--body-font);
   color: var(--accent1-color);
 }
 
+/* Limit main sections to 840px and center them */
 header, main, footer {
     width: 840px;
     margin: 0 auto;
 }
 
+/* Headings: special font and primary color */
 h1, h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
+/* Margin and padding for main content elements */
 nav, p, section, article {
     margin: 16px;
     padding: 8px;
 }
 
+/* Remove underline for social media links */
 .socialmedia a {
   text-decoration: none;
 }
 
+/* Hero section: relative positioning for overlay text */
 .hero {
   position: relative;
 }
 
+/* Full width hero image */
 .hero img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* Título principal encima de la imagen */
+/* Main title overlay on hero image */
 .hero h1 {
   position: absolute;
   top: 30px;
@@ -85,80 +101,126 @@ nav, p, section, article {
   text-align: center;
   font-size: 2.5rem;
   padding: 12px 0;
-  background-color: rgba(0, 0, 0, 0.4); /* fondo oscuro transparente */
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
 }
 
-/* Caja del artículo sobre la imagen */
-/* Contenedor del texto + imagen pequeña */
+/* Article box overlay on hero image */
 .hero article {
   position: absolute;
   bottom: 100px;
   left: 30px;
   right: 30px;
-  background-color: rgba(0, 80, 100, 0.85); /* semitransparente */
+  background-color: rgba(24, 27, 27, 0.70);
   color: white;
   padding: 16px;
   display: flex;
-  flex-direction: row-reverse; /* imagen a la derecha */
+  flex-direction: row-reverse; /* image on the right */
   align-items: center;
   gap: 16px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* Imagen pequeña dentro del article */
+/* Small image inside article */
 .hero article img {
-  width: 130px;
+  width: 150px;
   margin: 8px;
   border-radius: 6px;
   box-shadow: 1px 1px 8px rgba(0,0,0,0.3);
 }
 
+/* Social media icon size */
 .socialmedia img {
   width: 32px;
   height: 32px;
 }
 
+/* Adventure section styles */
 .adventure {
     text-align: center;
     padding: 20px;
 }
 
+/* Adventure gallery: flexbox with wrapping */
 .adventure-gallery {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* para que se acomoden en pantallas pequeñas */
+    flex-wrap: wrap;
 }
 
+/* Figure container for each image */
 .adventure-gallery figure {
     margin: 0;
     text-align: center;
 }
 
+/* Adventure images: rounded corners and shadow */
 .adventure-gallery img {
     width: 150px;
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+/* Caption under adventure images */
 .adventure-gallery figcaption {
     margin-top: 6px;
     font-size: 0.9rem;
     color: #333;
 }
 
+/* Footer: flex layout with text left and icons right */
 footer {
-    background-color: var(--primary-color); /* como en el wireframe */
+    background-color: var(--primary-color);
     padding: 15px 20px;
     display: flex;
-    justify-content: space-between; /* texto a la izquierda, íconos a la derecha */
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* por si se reduce la pantalla */
+    flex-wrap: wrap;
 }
 
+/* Footer text color */
 footer p {
   margin: 0;
   color: white;
+}
+
+/* History section title */
+.history-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* History content layout: two columns */
+.history-content {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* History text styling */
+.history-text {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+    text-align: justify;
+}
+
+/* History image container */
+.history-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* History image style */
+.history-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding: 20px;
+    border-radius: 30px;
 }
