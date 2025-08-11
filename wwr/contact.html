@@ -82,16 +82,23 @@
                 <input type="email" id="email" name="email">
 
                 <p>Purpose of the message:</p>
-                <label><input type="radio" name="purpose" value="general" required> General Inquiry</label>
-                <label><input type="radio" name="purpose" value="booking"> Booking Question</label>
-                <label><input type="radio" name="purpose" value="suggestion"> Website Suggestion</label>
-                
+                <label for="purpose-general">
+                    <input type="radio" id="purpose-general" name="purpose" value="general" required> General Inquiry
+                </label>
+                <label for="purpose-booking">
+                    <input type="radio" id="purpose-booking" name="purpose" value="booking"> Booking Question
+                </label>
+                <label for="purpose-suggestion">
+                    <input type="radio" id="purpose-suggestion" name="purpose" value="suggestion"> Website Suggestion
+                </label>
+
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
 
-                <label>
-                    <input type="checkbox" name="newsletter"> Subscribe me to the monthly newsletter
+                <label for="newsletter">
+                    <input type="checkbox" id="newsletter" name="newsletter"> Subscribe me to the monthly newsletter
                 </label>
+                
                 <button type="submit">Send Message</button>
             </form>
           </section>
