@@ -1,15 +1,16 @@
 :root {
-  /* CSS Variables: define global color palette and fonts */
+  /* Variables CSS globales: definen la paleta de colores y fuentes */
+  /* Global CSS variables: define color palette and fonts */
   --primary-color: #0F4C5C; 
   --secondary-color: #1B9AAA; 
   --accent1-color: #62C370;  
   --accent2-color: #CF995F; 
 
-  --heading-font: 'Bebas Neue', sans-serif; /* Font for headings */
-  --body-font: 'Open Sans', sans-serif;     /* Font for body text */
+  --heading-font: 'Bebas Neue', sans-serif; /* Fuente para encabezados / Font for headings */
+  --body-font: 'Open Sans', sans-serif;     /* Fuente para texto general / Font for body text */
 }
 
-
+/* Reset básico: elimina márgenes/padding por defecto y define box-sizing */
 /* Basic reset: remove default margins/padding and set box-sizing */
 * {
     margin: 0;
@@ -17,80 +18,94 @@
     box-sizing: border-box;
 }
 
+/* HEADER: diseño principal usando CSS Grid */
 /* HEADER: main layout using CSS Grid */
 header {
-    position: fixed;
+    position: fixed; /* Hace que el header quede fijo en la parte superior */
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 1000;
+    width: 100%; /* Ocupa todo el ancho */
+    z-index: 1000; /* Prioridad para que quede encima de otros elementos */
     display: grid;
-    grid-template-columns: auto 1fr; /* Auto width for logo, flexible for menu */
-    align-items: center; /* Vertically center content */
+    grid-template-columns: auto 1fr; /* Ancho automático para logo, flexible para menú */
+    align-items: center; /* Centra verticalmente */
     padding: 1rem 2rem;
-    background-color: #006994; /* Header background color */
+    background-color: #006994; /* Color de fondo del header */
     color: white;
-    gap: 2rem; /* Space between logo and navigation */
+    gap: 2rem; /* Espacio entre logo y navegación */
 }
 
+/* Logo en el header */
 /* Logo in the header */
 header .logo img {
-    max-height: 60px; /* Controls logo size */
+    max-height: 60px; /* Controla el tamaño máximo del logo */
 }
 
+/* Lista de navegación */
 /* Navigation list */
 header nav ul {
-    list-style: none; /* Remove bullet points */
-    display: flex; /* Arrange links in a row */
-    justify-content: flex-end; /* Align to the right */
-    gap: 1.5rem; /* Space between links */
+    list-style: none; /* Quita los puntos */
+    display: flex; /* Organiza los enlaces en fila */
+    justify-content: flex-end; /* Alinea a la derecha */
+    gap: 1.5rem; /* Espacio entre enlaces */
     margin: 0;
     padding: 0;
 }
 
+/* Estilos para enlaces de navegación */
 /* Navigation links style */
 header nav ul li a {
-    text-decoration: none; /* No underline */
-    color: white; /* White text */
-    font-weight: bold; /* Bold text */
+    text-decoration: none; /* Sin subrayado */
+    color: white; /* Texto blanco */
+    font-weight: bold; /* Texto en negrita */
 }
 
+/* Estilos generales para el texto del cuerpo */
 /* General body text style */
 body {
   font-family: var(--body-font);
   color: var(--accent1-color);
 }
+
+/* Ajuste de padding en main para evitar que el contenido quede detrás del header fijo */
+/* Padding adjustment in main to avoid content behind fixed header */
 main {
     padding-top: 90px; /* Ajusta según la altura total del header */
 }
-/* Center and limit section width */
-/* Contenedor centrado */
+
+/* Centrado y ancho máximo para secciones generales */
+/* Center and max width for general sections */
 footer {
   max-width: 100%;
   margin: 0 auto;
 }
+
 .container {
   max-width: 840px;
   margin: 0 auto;
 }
+
 .hero1 {
     max-width: 100% !important;
 }
 
+/* Márgenes y padding para elementos comunes */
 /* Margins and padding for common elements */
 nav, p, section, article {
     margin: 16px;
     padding: 8px;
 }
 
+/* Quitar subrayado en enlaces de redes sociales */
 /* Remove underline from social media links */
 .socialmedia a {
   text-decoration: none;
 }
 
+/* HERO: sección con imagen de fondo y elementos superpuestos */
 /* HERO section: background image with overlay elements */
 .hero {
-  position: relative; /* Needed for absolute positioning inside */
+  position: relative; /* Necesario para posicionar elementos dentro */
 }
 
 .hero img {
@@ -99,6 +114,7 @@ nav, p, section, article {
   height: auto;
 }
 
+/* Título principal sobre la imagen hero */
 /* Main title overlay on hero image */
 .hero h1 {
   position: absolute;
@@ -108,11 +124,12 @@ nav, p, section, article {
   text-align: center;
   font-size: 4rem;
   padding: 12px 0;
-  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
   color: white;
   font-family: var(--heading-font);
 }
 
+/* Caja con artículo superpuesta sobre hero */
 /* Article box overlay on hero image */
 .hero article {
   position: absolute;
@@ -120,17 +137,18 @@ nav, p, section, article {
   left: 30px;
   right: 30px;
   background-color: rgba(11, 78, 78, 0.7);
-  color:white;
+  color: white;
   padding: 10px;
   display: flex;
-  flex-direction: row-reverse; /* Image on the right */
+  flex-direction: row-reverse; /* Imagen a la derecha */
   align-items: center;
   gap: 16px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* Small image inside article */
+/* Imagen pequeña dentro del artículo hero */
+/* Small image inside hero article */
 .hero article img {
   width: 150px;
   margin: 8px;
@@ -138,25 +156,28 @@ nav, p, section, article {
   box-shadow: 1px 1px 8px rgba(0,0,0,0.3);
 }
 
+/* Tamaño de íconos de redes sociales */
 /* Social media icons size */
 .socialmedia img {
   width: 32px;
   height: 32px;
 }
 
+/* Sección de aventura */
 /* Adventure section */
 .adventure {
     text-align: center;
     padding: 20px;
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* Tamaño de letra aumentado */
 }
 
+/* Galería de aventura */
 /* Adventure gallery */
 .adventure-gallery {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Allows images to move to next row */
+    flex-wrap: wrap; /* Permite que las imágenes pasen a la siguiente fila */
 }
 
 .adventure-gallery figure {
@@ -176,9 +197,7 @@ nav, p, section, article {
     color: #333;
 }
 
-
-
-
+/* FOOTER */
 /* Footer */
 footer {
     background-color: var(--primary-color);
@@ -194,6 +213,7 @@ footer p {
   color: white;
 }
 
+/* Sección de historia */
 /* History section */
 .history-section h2 {
     font-size: 2.0rem;
@@ -232,18 +252,18 @@ footer p {
     border-radius: 10px;
 }
 
-
-
-
 /* ===== Contact Us Page ===== */
+/* Página de Contacto */
 
 /* Centrar título */
+/* Center title */
 .contact-title {
     text-align: center;
     margin-top: 20px;
 }
 
 /* Primera fila: Información + Mapa */
+/* First row: Information + Map */
 .company-info-map {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -266,6 +286,7 @@ footer p {
 }
 
 /* Segunda fila: Equipo + Formulario */
+/* Second row: Team + Form */
 .team-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -275,6 +296,7 @@ footer p {
 }
 
 /* Equipo */
+/* Team */
 .meet-title{
   text-align:center;
   margin-top: 20px;
@@ -298,9 +320,8 @@ footer p {
     border: 1px solid #000;
 }
 
-
-
 /* Formulario */
+/* Form */
 .contact-form h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
@@ -345,14 +366,15 @@ footer p {
 }
 
 /* Ajuste del footer para que coincida con diseño */
+/* Footer adjustment to match design */
 footer {
     border-top: 1px solid #000;
     background-color: var(--primary-color);
     color: white;
 }
 
-
-
+/* Imagen hero alternativa */
+/* Alternative hero image */
 .hero-img1 {
     display: block;
     width: 100%;
@@ -360,7 +382,7 @@ footer {
 }
 
 .hero-text1 {
-    position: relative; /* así el h1 se posiciona sobre la imagen */
+    position: relative; /* para posicionar el h1 sobre la imagen */
     text-align: center;
 }
 
@@ -375,8 +397,8 @@ footer {
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
-
 /* ===== NEWSLETTER ===== */
+/* Newsletter section */
 .newsletter {
     text-align: center;
     padding: 2rem;
@@ -432,6 +454,7 @@ footer {
 }
 
 /* ===== GRID CONTENT ===== */
+/* Grid content section */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -449,6 +472,8 @@ footer {
 }
 
 /* ===== GLOBAL HEADINGS & PARAGRAPHS ===== */
+/* Estilos globales para encabezados y párrafos */
+/* Global styles for headings & paragraphs */
 h1, h2, h3 {
     font-family: var(--heading-font);
     color: var(--primary-color);
@@ -459,6 +484,8 @@ p {
     color: black;
 }
 
+/* Título principal para secciones */
+/* Main title for sections */
 .main-title {
     font-family: var(--heading-font);
     font-size: 3rem;
@@ -467,6 +494,8 @@ p {
     text-align: center;
 }
 
+/* Contenedor principal para las tarjetas de viajes */
+/* Main container for trip cards */
 .trips-container {
     padding: 2rem;
     text-align: center;
@@ -474,6 +503,7 @@ p {
 }
 
 /* ======== CARDS DE VIAJES ======== */
+/* Trip cards section */
 .trip-cards {
     display: flex;
     gap: 2rem;
@@ -512,7 +542,7 @@ p {
 }
 
 /* ======== BOTÓN ======== */
-
+/* Button styles */
 .btn-button {
     display: inline-block;
     background:#ff5c00;
@@ -530,6 +560,7 @@ p {
 }
 
 /* ======== TABLA RESUMEN ======== */
+/* Summary table styles */
 .trip-table {
     margin-top: 3rem;
 }
@@ -562,14 +593,6 @@ p {
 
 .trip-table tr:hover {
     background-color: #ddd;
-}
-
-.main-title {
-    font-family: var(--heading-font);
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin: 6rem 0 2rem 0; /* Margen superior para no quedar debajo del header */
-    text-align: center;
 }
 
 
